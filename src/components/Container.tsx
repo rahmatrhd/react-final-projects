@@ -2,6 +2,9 @@ import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/s
 import * as React from 'react';
 
 const styles = (theme: Theme) => createStyles({
+  gutterBottom: {
+    marginBottom: theme.spacing.unit * 2,
+  },
   gutterTop: {
     marginTop: theme.spacing.unit * 2,
   },
@@ -14,12 +17,14 @@ const styles = (theme: Theme) => createStyles({
 
 interface InterfaceProps extends WithStyles<typeof styles> {
   className?: string,
+  gutterBottom?: boolean,
   gutterTop?: boolean,
 }
 
 const Container: React.StatelessComponent<InterfaceProps> = ({
   classes,
   className,
+  gutterBottom,
   gutterTop,
   ...props
 }) => (
@@ -27,6 +32,7 @@ const Container: React.StatelessComponent<InterfaceProps> = ({
     {...props}
     className={[
       classes.root,
+      ...(gutterBottom ? [classes.gutterBottom] : []),
       ...(gutterTop ? [classes.gutterTop] : []),
       className
     ].join(' ')}
@@ -34,6 +40,7 @@ const Container: React.StatelessComponent<InterfaceProps> = ({
 )
 
 Container.defaultProps = {
+  gutterBottom: false,
   gutterTop: false,
 }
 

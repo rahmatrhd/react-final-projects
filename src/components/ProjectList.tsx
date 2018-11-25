@@ -32,7 +32,7 @@ const ProjectList: React.StatelessComponent<Props> = ({
   classes,
 }) => (
   <Jumbotron>
-    <Container gutterTop={true}>
+    <Container gutterBottom={true} gutterTop={true}>
       <GridList cellHeight="auto" cols={2} spacing={8}>
         {projects.map((project: InterfaceProject) => (
           <GridListTile key={project.title} classes={{ tile: classes.gridListTile }}>
