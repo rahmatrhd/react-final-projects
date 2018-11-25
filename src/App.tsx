@@ -4,6 +4,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import * as React from 'react';
 import Header from './components/Header'
 import ProjectList from './components/ProjectList'
+import ThankYou from './components/ThankYou'
 import theme from './config/theme';
 
 class App extends React.Component {
@@ -18,6 +19,9 @@ class App extends React.Component {
             </Grid>
             <Grid item={true} xs={12}>
               <ProjectList />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <ThankYou />
             </Grid>
           </Grid>
         </MuiThemeProvider>
