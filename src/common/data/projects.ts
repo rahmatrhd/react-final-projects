@@ -147,6 +147,19 @@ const projects: InterfaceProject[] = [
   },
   {
     author: {
+      name: 'Ridla Amanatalkafi Arifin',
+      picture: null,
+      url: 'https://github.com/kafiarifin',
+    },
+    description: 'Get secured while auth to an app and CRUD operations.',
+    featured: 'https://images.unsplash.com/photo-1523485474951-78fcd9344f0c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0ff6fa349319a73a6b20de5de4aae946&auto=format&fit=crop&w=681&q=80',
+    repositoryUrl: 'https://github.com/kafiarifin/ReactTokenAuth',
+    tags: ['web-app', 'react'],
+    title: 'React Token Auth',
+    url: 'https://kafi-hacktiv8.firebaseapp.com',
+  },
+  {
+    author: {
       name: 'Stephanus Nicolaus',
       picture: null,
       url: 'https://github.com/stephanusnicolaus/',
