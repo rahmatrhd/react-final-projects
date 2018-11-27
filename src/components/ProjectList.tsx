@@ -12,6 +12,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import { createStyles, withStyles, WithStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import withWidth, { WithWidth } from '@material-ui/core/withWidth'
 import * as React from 'react';
 import projects, { InterfaceProject } from '../common/data/projects'
 import Container from './Container';
@@ -26,14 +27,15 @@ const styles = createStyles({
   },
 })
 
-type Props = WithStyles<typeof styles>
+type Props = WithStyles<typeof styles> & WithWidth
 
 const ProjectList: React.StatelessComponent<Props> = ({
   classes,
+  width,
 }) => (
   <Jumbotron>
     <Container gutterBottom={true} gutterTop={true}>
-      <GridList cellHeight="auto" cols={2} spacing={8}>
+      <GridList cellHeight="auto" cols={width === 'xs' || width === 'sm' ? 1 : 2} spacing={8}>
         {projects.map((project: InterfaceProject) => (
           <GridListTile key={project.title} classes={{ tile: classes.gridListTile }}>
             <Card>
@@ -74,5 +76,6 @@ const ProjectList: React.StatelessComponent<Props> = ({
 )
 
 const StyledProjectList = withStyles(styles)(ProjectList)
+const WithWidthProjectList = withWidth()(StyledProjectList)
 
-export default StyledProjectList
+export default WithWidthProjectList
